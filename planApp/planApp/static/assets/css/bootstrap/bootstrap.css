@@ -12324,3 +12324,10 @@ a.text-dark:focus
         border-color: #dee2e6;
     }
 }
+.messageCustom{
+    padding: 20px;
+    background: #1f7e58;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}

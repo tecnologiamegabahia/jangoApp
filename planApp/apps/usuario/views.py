@@ -3,11 +3,9 @@ from django.http import HttpResponse
 # importacion MTC
 from apps.usuario.forms import UsuarioForm
 from apps.usuario.models import usuario
-from apps.rol.models import rol
 from django.views.generic import CreateView, ListView
-import hashlib
-
-from django.contrib.auth.hashers import identify_hasher
+from django.db import connection
+import json
 
 
 # Create your views here.
@@ -79,7 +77,7 @@ def usuario_delete(request, id):
         print(e)
 
 
-class UsuairosList(ListView):
+class UsuariosList(ListView):
     try:
         model = usuario
         queryset = model.objects.filter(status=1)

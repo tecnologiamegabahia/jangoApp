@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from apps.rol.models import rol
 from django.views.generic import CreateView, ListView
 from apps.rol.forms import RolForm
-
+from django.contrib import  messages
 
 # Create your views here.
 def index(request):
@@ -28,6 +28,7 @@ def rol_create(request):
             if form.is_valid():
                 form.state = '1'
                 form.save()
+                messages.success(request, 'Creado Correctamente')
             return redirect('rol:index')
         else:
             form = RolForm
@@ -46,6 +47,7 @@ def rol_edit(request, id):
             form = RolForm(request.POST, instance=rolx)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Creado Correctamente')
             return redirect('rol:index')
         return render(request, 'rol/rol_form.html', {'form': form})
     except Exception as e:

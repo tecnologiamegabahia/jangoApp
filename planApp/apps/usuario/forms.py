@@ -72,3 +72,25 @@ class UsuarioForm(forms.ModelForm):
                 'rol': forms.Select(attrs={'class': 'form-control required '}),
 
             }
+
+
+class UsuarioUpdateForm(forms.ModelForm):
+    class Meta:
+        model = usuario
+        fields = [
+            'documento',
+            'username',
+            'password',
+
+        ]
+        labels = {
+            'documento': 'Documento',
+            'username': 'UserName',
+            'password': 'Nuevo Password',
+        }
+        widgets = {
+            'documento': forms.TextInput(
+                attrs={'class': 'form-control', "autocomplete": "off", 'readonly': 'readonly'}),
+            'username': forms.TextInput(attrs={'class': 'form-control', "autocomplete": "off", 'readonly': 'readonly'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control', "autocomplete": "off"}),
+        }

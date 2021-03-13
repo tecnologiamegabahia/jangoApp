@@ -17,11 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from django.contrib.auth.views import LoginView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuario/', include(('apps.usuario.urls', 'usuario'), namespace='usuario')),
     path('roles/', include(('apps.rol.urls', 'rol'), namespace='rol')),
     path("accounts/", include("apps.authentication.urls")),
-
+    path("", include("apps.authentication.urls")),
+    path("clientes/", include(("apps.cliente.urls", 'clientes'), namespace='clientes')),
 ]
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

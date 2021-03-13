@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,10 +28,12 @@
 
 <body class="">
 
-{% include "includes/sidenav.html" %}
+{% include  "includes/sidenav.html" %}
 
 {% include "includes/navigation.html" %}
+
 <div class="main-content" id="panel">
+    {% csrf_token %}
     {% block content %}{% endblock content %}
 </div>
 

@@ -6,7 +6,13 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
+{% if messages %}
+{%for message in messages%}
+<div id="messageCustom">
+    {{message}}
+</div>
+{%endfor%}
+{%endif%}
 <div class="row">
     <div class="col-9 col-md-9 col-lg-9">
     </div>

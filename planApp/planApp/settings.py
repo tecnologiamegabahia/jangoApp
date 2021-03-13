@@ -14,6 +14,7 @@ from pathlib import Path
 import pymysql
 import os
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'apps.usuario',
     'apps.rol',
     'apps.authentication',
-
+    'import_export',
+    'apps.cliente',
 ]
 
 AUTH_USER_MODEL = 'usuario.usuario'
@@ -70,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -126,7 +129,8 @@ USE_TZ = True
 # archivos static.
 STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/templates/logs/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'templates/logs/')
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'planApp/static'),
@@ -134,3 +138,4 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = reverse_lazy('usuario: dashboard')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
+
