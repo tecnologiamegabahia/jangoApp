@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'planApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'app_plan_v3',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'app_plan',
+        'USER': 'usr_maintainer',
+        'PASSWORD': 'Tc2;1EE{DBE^oN',
+        'HOST': '209.145.61.41',
         'PORT': 3306
     }
 }
