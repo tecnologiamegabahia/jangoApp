@@ -29,7 +29,7 @@ SECRET_KEY = 'w_a^qoxjt&0ch9*s20&vj4apa3q7+w#2ap9#4@z7(wx*t8e9ak'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '209.145.61.41', 'web.app.com']
 
 # Application definition
 
@@ -138,4 +138,3 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = reverse_lazy('usuario: dashboard')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
-
