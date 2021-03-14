@@ -28,5 +28,4 @@ urlpatterns = [
     path("", include("apps.authentication.urls")),
     path("clientes/", include(("apps.cliente.urls", 'clientes'), namespace='clientes')),
 ]
-if settings.DEBUG is True:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

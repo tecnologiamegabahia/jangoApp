@@ -5,7 +5,7 @@ from django.conf.urls import url
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    path('login/', login_required(login_view), name="login"),
+    path('login/', login_view, name="login"),
     path('', login_required(login_view), name="login"),
     path('register/', login_required(register_user), name="register"),
     path("logout/", login_required(LogoutView.as_view()), name="logout"),
